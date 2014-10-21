@@ -1,5 +1,5 @@
 """
-This is the core logic for the {%= title %}
+This is the core logic for the Done Toggle
 """
 import os
 
@@ -11,9 +11,9 @@ from xblock.fields import String
 from xblock.fragment import Fragment
 
 
-class {%= nameClass %}(XBlock):
+class DoneToggle(XBlock):
     """
-    {%= description %}
+    Button allowing students to mark something as completed.
     """
 
     @staticmethod
@@ -22,16 +22,16 @@ class {%= nameClass %}(XBlock):
         Gather scenarios to be displayed in the workbench
         """
         return [
-            ('{%= title %}',
+            ('Done Toggle',
              """<sequence_demo>
-                    <{%= namePackage %} />
-                    <{%= namePackage %} name="My First XBlock" />
+                    <DoneToggle />
+                    <DoneToggle name="My First XBlock" />
                 </sequence_demo>
              """),
         ]
 
     name = String(
-        default='{%= title %}',
+        default='Done Toggle',
         scope=Scope.settings,
         help="This is the XBlock's name",
     )
@@ -44,7 +44,7 @@ class {%= nameClass %}(XBlock):
             path_html='view.html',
             path_css='view.less.min.css',
             path_js='view.js.min.js',
-            fragment_js='{%= nameClass %}View',
+            fragment_js='DoneToggleView',
         )
         return fragment
 
@@ -58,7 +58,7 @@ class {%= nameClass %}(XBlock):
             path_html='edit.html',
             path_css='edit.less.min.css',
             path_js='edit.js.min.js',
-            fragment_js='{%= nameClass %}Edit',
+            fragment_js='DoneToggleEdit',
         )
         return fragment
 

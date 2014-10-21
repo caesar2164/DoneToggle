@@ -15,21 +15,21 @@ setuptools.setup(
     url=package_json.get('homepage'),
     license='AGPL-3.0',
     packages=[
-        '{%= namePackage %}',
+        'DoneToggle',
     ],
     install_requires=[
         'XBlock',
     ],
     entry_points={
         'xblock.v1': [
-            '{%= namePackage %} = {%= namePackage %}:{%= nameClass %}',
+            'DoneToggle = DoneToggle:DoneToggle',
         ],
     },
     package_dir={
-        '{%= namePackage %}': '{%= namePackage %}',
+        'DoneToggle': 'DoneToggle',
     },
     package_data={
-        "{%= namePackage %}": [
+        "DoneToggle": [
             'public/*',
         ],
     },

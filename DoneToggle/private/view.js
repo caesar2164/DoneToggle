@@ -1,4 +1,4 @@
-function {%= nameClass %}View(runtime, element) {
+function DoneToggleView(runtime, element) {
     'use strict';
 
     var $ = window.jQuery;
